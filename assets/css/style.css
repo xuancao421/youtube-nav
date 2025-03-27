@@ -1,1 +1,74 @@
+/* 自定义样式 */
+body {
+    background-color: #f8f9fa;
+}
 
+.navbar {
+    background: linear-gradient(135deg, #ff0000, #cc0000) !important;
+}
+
+.card {
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: none;
+    border-radius: 10px;
+}
+
+.card-header {
+    background-color: #fff;
+    border-bottom: 2px solid #ff0000;
+    padding: 15px;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.card-header i {
+    color: #ff0000;
+    margin-right: 8px;
+}
+
+.list-group-item {
+    border: none;
+    padding: 12px 15px;
+}
+
+.list-group-item a {
+    color: #333;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.list-group-item a:hover {
+    color: #ff0000;
+}
+
+.list-group-item img {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.search-box {
+    margin: 20px 0;
+}
+
+.search-box input {
+    border-radius: 20px;
+    padding: 10px 20px;
+    border: 2px solid #eee;
+}
+
+.search-box input:focus {
+    border-color: #ff0000;
+    box-shadow: none;
+}
+
+.footer {
+    background-color: #fff;
+    border-top: 1px solid #eee;
+}
