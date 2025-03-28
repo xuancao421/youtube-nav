@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube创作者工具导航</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1230786_n8sxo4ygqm.css">
+    <style>
+        body {
+            background-color: #f4f6f9;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        .item-box {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .item-box:hover {
+            transform: translateY(-5px);
+        }
+        .item-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .item-description {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .btn-goto {
+            background-color: #007bff;
+            color: white;
+        }
+        .category-title {
+            color: #333;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">YouTube创作者工具导航</h1>
+
+        <!-- 热门爆款的选题挖掘工具 -->
+        <div class="row">
+            <div class="col-12">
+                <h2 class="category-title">热门爆款的选题挖掘工具</h2>
+            </div>
+            <div class="col-md-4">
+                <div class="item-box">
+                    <div class="item-title">PipedYouTube</div>
+                    <div class="item-description">查看YouTube上的热门趋势视频，无广告干扰快速浏览</div>
+                    <a href="https://piped.kavin.rocks/trending" target="_blank" class="btn btn-goto btn-block">访问网站</a>
+                </div>
+            </div>
+            <!-- 其他工具可以按照这个格式添加 -->
+        </div>
+
+        <!-- 其他分类可以用类似的方式添加 -->
+        <!-- 频道对标挖掘工具 -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <h2 class="category-title">频道对标挖掘工具</h2>
+            </div>
+            <div class="col-md-4">
+                <div class="item-box">
+                    <div class="item-title">FindAChannel</div>
+                    <div class="item-description">发现和分析YouTube频道，提供SEO工具</div>
+                    <a href="https://www.findachannel.net/" target="_blank" class="btn btn-goto btn-block">访问网站</a>
+                </div>
+            </div>
+            <!-- 其他工具 -->
+        </div>
+
+        <!-- 可以继续添加其他分类 -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
