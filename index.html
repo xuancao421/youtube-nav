@@ -143,18 +143,25 @@
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     transition: all 0.1s ease;  /* 点击反馈更快 */
 }
-     .tool-icon {
-    min-width: 32px;    /* 从 40px 改小 */
-    width: 32px;        /* 从 40px 改小 */
-    height: 32px;       /* 从 40px 改小 */
+    .tool-icon {
+    min-width: 40px;    /* 恢复原来的尺寸 */
+    width: 40px;        /* 恢复原来的尺寸 */
+    height: 40px;       /* 恢复原来的尺寸 */
     margin-right: 15px;
-    border-radius: 6px;  /* 从 8px 改小 */
+    border-radius: 8px;  /* 恢复原来的圆角 */
     display: flex;
     align-items: center;
     justify-content: center;
     background: #f5f5f5;
     overflow: hidden;
     flex-shrink: 0;
+}
+
+/* 添加图片尺寸控制 */
+.tool-icon img {
+    width: 20px;      /* 控制图片大小 */
+    height: 20px;     /* 控制图片大小 */
+    object-fit: contain;  /* 保持图片比例 */
 }
 
 .tool-content {
