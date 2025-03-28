@@ -28,18 +28,20 @@
             padding: 20px;
             margin-bottom: 20px;
             text-align: center;  /* 添加这行实现居中 */
+            /* ❌ 确保这一行不要再加蓝线 */
+            /* border-bottom: 2px solid #2196F3; ← 不要再加这个 */
         }
         .sidebar-logo h2 {
             color: #FFD700;
             font-size: 1.6em;
-            margin: 0 0 5px 0;  /* 控制上下间距，让两行文字靠近 */
+            margin: 0 0 5px 0;  /* 保持行距紧凑 */
         }
            .sidebar-logo h3 {
            color: #FFD700;
            font-size: 1.5em;
            margin: 0;
            padding-bottom: 5px;
-           border-bottom: 2px solid #2196F3;  /* 蓝线只加在“工具导航”下面 */
+           border-bottom: 2px solid #2196F3;  /* ✅ 蓝线仅保留在工具导航下方 */
         }
         .nav-item {
             padding: 12px 24px;
