@@ -112,12 +112,12 @@
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));  /* 调整为220px适合4列布局 */
     gap: 16px;  /* 减小间距使布局更紧凑 */
 }
-    .tool-card {
+   .tool-card {
     background: #fff;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #eee;  /* 改变边框颜色 */
     border-radius: 8px;
-    padding: 20px;
-    transition: all 0.1s ease-out; /* 移出时使用过渡 */
+    padding: 15px;  /* 改小内边距 */
+    transition: all 0.1s ease;
     display: flex;
     align-items: flex-start;
     cursor: pointer;
@@ -126,6 +126,19 @@
     position: relative;
     backface-visibility: hidden;
     transform: translateZ(0);
+}
+
+.tool-card h3 {
+    font-size: 16px;
+    margin: 0 0 4px 0;
+    color: #333;
+}
+
+.tool-card p {
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
 }
 
 .tool-card:hover {
