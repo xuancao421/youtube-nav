@@ -4,84 +4,241 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube创作者工具导航</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1230786_n8sxo4ygqm.css">
     <style>
-        body {
-            background-color: #f4f6f9;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .item-box {
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 2.5em;
+            color: #1a1a1a;
+        }
+        .section {
             background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2196F3;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #2196F3;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .tool-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
             border-radius: 8px;
             padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-        .item-box:hover {
+        .tool-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        .item-title {
+        .tool-name {
+            font-size: 1.2em;
             font-weight: bold;
-            color: #333;
             margin-bottom: 10px;
+            color: #1a1a1a;
         }
-        .item-description {
+        .tool-desc {
             color: #666;
             margin-bottom: 15px;
         }
-        .btn-goto {
-            background-color: #007bff;
+        .tool-link {
+            display: inline-block;
+            background: #2196F3;
             color: white;
+            padding: 8px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.2s;
         }
-        .category-title {
-            color: #333;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+        .tool-link:hover {
+            background: #1976D2;
+        }
+        .tool-tags {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #888;
         }
     </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center mb-4">YouTube创作者工具导航</h1>
-
+    <div class="container">
+        <h1>YouTube创作者工具导航</h1>
+        
         <!-- 热门爆款的选题挖掘工具 -->
-        <div class="row">
-            <div class="col-12">
-                <h2 class="category-title">热门爆款的选题挖掘工具</h2>
-            </div>
-            <div class="col-md-4">
-                <div class="item-box">
-                    <div class="item-title">PipedYouTube</div>
-                    <div class="item-description">查看YouTube上的热门趋势视频，无广告干扰快速浏览</div>
-                    <a href="https://piped.kavin.rocks/trending" target="_blank" class="btn btn-goto btn-block">访问网站</a>
+        <section class="section">
+            <h2>一、热门爆款的选题挖掘工具</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-name">PipedYouTube</div>
+                    <div class="tool-desc">查看YouTube上的热门趋势视频，无广告干扰快速浏览</div>
+                    <a href="https://piped.kavin.rocks/trending" class="tool-link" target="_blank">访问网站</a>
+                    <div class="tool-tags">关键词：YouTube趋势、热门视频、无广告观看</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-name">YewTube Trending</div>
+                    <div class="tool-desc">查看美国地区的热门趋势视频，无广告干扰</div>
+                    <a href="https://yewtu.be/feed/trending?type=Default&region=US" class="tool-link" target="_blank">访问网站</a>
+                    <div class="tool-tags">关键词：YouTube趋势、地区热门</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-name">Tubefilter</div>
+                    <div class="tool-desc">提供YouTube新闻、分析和资源</div>
+                    <a href="https://www.tubefilter.com/" class="tool-link" target="_blank">访问网站</a>
+                    <div class="tool-tags">关键词：YouTube新闻、创作者资源、行业趋势</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-name">Exploding Topics</div>
+                    <div class="tool-desc">提供热门YouTube搜索关键词</div>
+                    <a href="https://explodingtopics.com/blog/top-youtube-searches" class="tool-link" target="_blank">访问网站</a>
+                    <div class="tool-tags">关键词：关键词研究、内容趋势、SEO优化</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-name">TASTYEUTTS</div>
+                    <div class="tool-desc">提供最赚钱的YouTube领域</div>
+                    <a href="https://www.tastyedits.com/most-profitable-youtube-niches/" class="tool-link" target="_blank">访问网站</a>
+                    <div class="tool-tags">关键词：YouTube选题、CPM</div>
                 </div>
             </div>
-            <!-- 其他工具可以按照这个格式添加 -->
-        </div>
+        </section>
 
-        <!-- 其他分类可以用类似的方式添加 -->
         <!-- 频道对标挖掘工具 -->
-        <div class="row mt-4">
-            <div class="col-12">
-                <h2 class="category-title">频道对标挖掘工具</h2>
-            </div>
-            <div class="col-md-4">
-                <div class="item-box">
-                    <div class="item-title">FindAChannel</div>
-                    <div class="item-description">发现和分析YouTube频道，提供SEO工具</div>
-                    <a href="https://www.findachannel.net/" target="_blank" class="btn btn-goto btn-block">访问网站</a>
+        <section class="section">
+            <h2>二、频道对标挖掘工具</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-name">FindAChannel</div>
+                    <div class="tool-desc">发现和分析YouTube频道，提供SEO工具</div>
+                    <a href="https://www.findachannel.net/" class="tool-link" target="_blank">访问网站</a>
+                    <div class="tool-tags">关键词：YouTube频道发现、网红营销、SEO工具</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-name">SimilarChannels</div>
+                    <div class="tool-desc">发现与特定频道相似的其他频道</div>
+                    <a href="https://similarchannels.com/" class="tool-link" target="_blank">访问网站</a>
+                    <div class="tool-tags">关键词：相似频道推荐、社区驱动</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-name">Favoree</div>
+                    <div class="tool-desc">发现和评价YouTube频道</div>
+                    <a href="https://www.favoree.io/" class="tool-link" target="_blank">访问网站</a>
+                    <div class="tool-tags">关键词：频道评价、内容推荐、用户评论</div>
                 </div>
             </div>
-            <!-- 其他工具 -->
-        </div>
+        </section>
 
-        <!-- 可以继续添加其他分类 -->
+        <!-- 关键词挖掘与SEO工具 -->
+        <section class="section">
+            <h2>三、关键词挖掘与SEO工具</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-name">TubeBuddy</div>
+                    <div class="tool-desc">优化视频标题、描述和标签</div>
+                    <a href="https://chrome.google.com/webstore/detail/tubebuddy-for-youtube/mhkhmbddkmdggbhaaaodilponhnccicb" class="tool-link" target="_blank">访问网站</a>
+                    <div class="tool-tags">关键词：YouTubeSEO、频道管理、视频优化</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-name">Google Trends</div>
+                    <div class="tool-desc">分析全球和本地搜索趋势</div>
+                    <a href="https://trends.google.com/trends/" class="tool-link" target="_blank">访问网站</a>
+                    <div class="tool-tags">关键词：趋势分析、数据统计、关键词研究</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 频道分析工具 -->
+        <section class="section">
+            <h2>四、频道分析工具</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-name">ViewStats</div>
+                    <div class="tool-desc">提供详细的观看统计数据</div>
+                    <a href="https://www.viewstats.com/" class="tool-link" target="_blank">访问网站</a>
+                    <div class="tool-tags">关键词：YouTube频道统计、数据分析</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-name">YouTube Studio</div>
+                    <div class="tool-desc">管理视频、查看数据分析</div>
+                    <a href="https://studio.youtube.com/" class="tool-link" target="_blank">访问网站</a>
+                    <div class="tool-tags">关键词：视频管理、数据分析、频道优化</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 频道收益分析工具 -->
+        <section class="section">
+            <h2>五、频道收益分析工具</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-name">Social Blade</div>
+                    <div class="tool-desc">提供YouTube频道的详细数据</div>
+                    <a href="https://socialblade.com/" class="tool-link" target="_blank">访问网站</a>
+                    <div class="tool-tags">关键词：YouTube分析、社交媒体统计</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-name">YouTube Monetization Checker</div>
+                    <div class="tool-desc">检测货币化状态，估算收入</div>
+                    <a href="https://ytlarge.com/youtube/monetization-checker/" class="tool-link" target="_blank">访问网站</a>
+                    <div class="tool-tags">关键词：货币化检测、收益估算</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 内容创作工具 -->
+        <section class="section">
+            <h2>六、内容创作工具</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-name">Canva</div>
+                    <div class="tool-desc">制作专业的封面图和广告素材</div>
+                    <a href="https://www.canva.cn/" class="tool-link" target="_blank">访问网站</a>
+                    <div class="tool-tags">关键词：封面设计、图形设计、视频编辑</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-name">Ostendo</div>
+                    <div class="tool-desc">截取网页或屏幕截图</div>
+                    <a href="https://chrome.google.com/webstore/detail/ostendo/" class="tool-link" target="_blank">访问网站</a>
+                    <div class="tool-tags">关键词：YouTube、封面、屏幕截图</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 下载工具 -->
+        <section class="section">
+            <h2>七、下载工具</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-name">Y2mate</div>
+                    <div class="tool-desc">下载并转换视频格式</div>
+                    <a href="https://www.y2mate.com/" class="tool-link" target="_blank">访问网站</a>
+                    <div class="tool-tags">关键词：在线视频下载、格式转换</div>
+                </div>
+            </div>
+        </section>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
