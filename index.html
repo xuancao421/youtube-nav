@@ -112,12 +112,12 @@
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 20px;
 }
-     .tool-card {
+    .tool-card {
     background: #fff;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     padding: 20px;
-    transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out; /* 移出时使用过渡 */
     display: flex;
     align-items: flex-start;
     cursor: pointer;
@@ -129,6 +129,7 @@
 }
 
 .tool-card:hover {
+    transition: none; /* 移入时立即生效 */
     transform: translateY(-3px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.08);
     border-color: rgba(0,0,0,0.12);
@@ -137,7 +138,7 @@
 .tool-card:active {
     transform: translateY(0);
     box-shadow: none;
-    transition: all 0.05s ease-in;
+    transition: all 0.05s ease-in; /* 点击时快速归位 */
 }
 
 .tool-card:active {
