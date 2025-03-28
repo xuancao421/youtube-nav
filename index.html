@@ -87,6 +87,7 @@
             transition: all 0.3s;
             text-decoration: none;
             display: block;
+            border-left: 3px solid transparent;
         }
         .subnav a:hover {
             color: #fff;
@@ -95,6 +96,7 @@
         .subnav a.active {
             background: rgba(255,255,255,0.1);
             border-left: 3px solid #FFD700;
+            color: #fff;
         }
         .container {
             margin-left: 240px;
@@ -686,6 +688,16 @@
                 if (item.getAttribute('href').substring(1) === current) {
                     item.classList.add('active');
                 }
+            });
+        });
+
+        // 添加点击事件处理
+        document.querySelectorAll('.subnav a').forEach(item => {
+            item.addEventListener('click', function(e) {
+                document.querySelectorAll('.subnav a').forEach(link => {
+                    link.classList.remove('active');
+                });
+                this.classList.add('active');
             });
         });
     </script>
