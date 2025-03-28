@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
@@ -28,14 +31,11 @@
             padding: 20px;
             margin-bottom: 20px;
             text-align: center;
-            /* 确保这一行不要再加蓝线 */
-            /* border-bottom: 2px solid #2196F3; ← 不要再加这个 */
         }
         .sidebar-logo h2 {
             color: #FFD700;
             font-size: 1.6em;
-            margin: 0 0 1px 0;  /* 缩短行距 */
-            /* 去掉底部边框 */
+            margin: 0 0 1px 0;
             border-bottom: none;
         }
         .sidebar-logo h3 {
@@ -43,7 +43,7 @@
             font-size: 1.5em;
             margin: 0;
             padding-bottom: 5px;
-            border-bottom: 2px solid #2196F3;  /* 蓝线仅保留在工具导航下方 */
+            border-bottom: 2px solid #2196F3;
         }
         .nav-item {
             padding: 12px 24px;
@@ -80,15 +80,21 @@
         .subnav.active {
             display: block;
         }
-        .subnav-item {
+        .subnav a {
             padding: 10px 24px;
             color: rgba(255,255,255,0.7);
             cursor: pointer;
             transition: all 0.3s;
+            text-decoration: none;
+            display: block;
         }
-        .subnav-item:hover {
+        .subnav a:hover {
             color: #fff;
             background: rgba(255,255,255,0.05);
+        }
+        .subnav a.active {
+            background: rgba(255,255,255,0.1);
+            border-left: 3px solid #FFD700;
         }
         .container {
             margin-left: 240px;
@@ -107,95 +113,81 @@
             padding-bottom: 10px;
             border-bottom: 2px solid #2196F3;
         }
-     .tools-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));  /* 调整为220px适合4列布局 */
-    gap: 16px;  /* 减小间距使布局更紧凑 */
-}
-   .tool-card {
-    background: #fff;
-    border: 1px solid #eee;  /* 改变边框颜色 */
-    border-radius: 8px;
-    padding: 15px;  /* 改小内边距 */
-    transition: all 0.1s ease;
-    display: flex;
-    align-items: flex-start;
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-    position: relative;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-}
-
-.tool-card h3 {
-    font-size: 16px;
-    margin: 0 0 4px 0;
-    color: #333;
-}
-
-.tool-card p {
-    font-size: 13px;
-    color: #666;
-    margin: 0;
-    line-height: 1.4;
-}
-
-.tool-card:hover {
-    transition: none; /* 移入时立即生效 */
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-    border-color: rgba(0,0,0,0.12);
-}
-
-.tool-card:active {
-    transform: translateY(0);
-    box-shadow: none;
-    transition: all 0.05s ease-in; /* 点击时快速归位 */
-}
-
-.tool-card:active {
-    transform: translateY(0);  /* 点击时回到原位 */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: all 0.1s ease;  /* 点击反馈更快 */
-}
-    .tool-icon {
-    min-width: 32px;  /* 改小尺寸 */
-    width: 32px;      /* 改小尺寸 */
-    height: 32px;     /* 改小尺寸 */
-    margin-right: 12px;  /* 改小间距 */
-    border-radius: 8px;  /* 保留 */
-    display: flex;    /* 保留 */
-    align-items: center;  /* 保留 */
-    justify-content: center;  /* 保留 */
-    background: #f5f5f5;  /* 保留 */
-    overflow: hidden;  /* 保留 */
-    flex-shrink: 0;   /* 保留 */
-}
-
-.tool-icon img {
-    width: 30px;    /* 改小图片尺寸 */
-    height: 30px;   /* 改小图片尺寸 */
-    object-fit: contain;  /* 保留 */
-}
-
-.tool-content {
-    flex: 1;
-    min-width: 0;
-}
-
-.tool-name {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: #1a1a1a;
-}
-
-.tool-desc {
-    color: #666;
-    font-size: 0.9em;
-    line-height: 1.4;
-}
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+        }
+        .tool-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 15px;
+            transition: all 0.1s ease;
+            display: flex;
+            align-items: flex-start;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+        }
+        .tool-card h3 {
+            font-size: 16px;
+            margin: 0 0 4px 0;
+            color: #333;
+        }
+        .tool-card p {
+            font-size: 13px;
+            color: #666;
+            margin: 0;
+            line-height: 1.4;
+        }
+        .tool-card:hover {
+            transition: none;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            border-color: rgba(0,0,0,0.12);
+        }
+        .tool-card:active {
+            transform: translateY(0);
+            box-shadow: none;
+            transition: all 0.05s ease-in;
+        }
+        .tool-icon {
+            min-width: 32px;
+            width: 32px;
+            height: 32px;
+            margin-right: 12px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f5f5f5;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .tool-icon img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+        }
+        .tool-content {
+            flex: 1;
+            min-width: 0;
+        }
+        .tool-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+        .tool-desc {
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
     </style>
 </head>
 <body>
@@ -212,11 +204,11 @@
             <i class="fas fa-chevron-right arrow"></i>
         </div>
         <div class="subnav" id="section1-sub">
-            <div class="subnav-item">Piped</div>
-            <div class="subnav-item">YewTube Trending</div>
-            <div class="subnav-item">Tubefilter</div>
-            <div class="subnav-item">Exploding Topics</div>
-            <div class="subnav-item">TASTYEUTTS</div>
+            <a href="#trending-tools" class="subnav-item">Piped</a>
+            <a href="#trending-tools" class="subnav-item">YewTube Trending</a>
+            <a href="#trending-tools" class="subnav-item">Tubefilter</a>
+            <a href="#trending-tools" class="subnav-item">Exploding Topics</a>
+            <a href="#trending-tools" class="subnav-item">TASTYEUTTS</a>
         </div>
 
         <div class="nav-item" data-section="section2">
@@ -227,9 +219,9 @@
             <i class="fas fa-chevron-right arrow"></i>
         </div>
         <div class="subnav" id="section2-sub">
-            <div class="subnav-item">Find A Channel</div>
-            <div class="subnav-item">Similar Channels</div>
-            <div class="subnav-item">Favoree</div>
+            <a href="#channel-tools" class="subnav-item">Find A Channel</a>
+            <a href="#channel-tools" class="subnav-item">Similar Channels</a>
+            <a href="#channel-tools" class="subnav-item">Favoree</a>
         </div>
 
         <div class="nav-item" data-section="section3">
@@ -240,10 +232,10 @@
             <i class="fas fa-chevron-right arrow"></i>
         </div>
         <div class="subnav" id="section3-sub">
-            <div class="subnav-item">TubeBuddy</div>
-            <div class="subnav-item">Google Trends</div>
-            <div class="subnav-item">Answer The Public</div>
-            <div class="subnav-item">Keyword Tool</div>
+            <a href="#seo-tools" class="subnav-item">TubeBuddy</a>
+            <a href="#seo-tools" class="subnav-item">Google Trends</a>
+            <a href="#seo-tools" class="subnav-item">Answer The Public</a>
+            <a href="#seo-tools" class="subnav-item">Keyword Tool</a>
         </div>
 
         <div class="nav-item" data-section="section4">
@@ -254,9 +246,9 @@
             <i class="fas fa-chevron-right arrow"></i>
         </div>
         <div class="subnav" id="section4-sub">
-            <div class="subnav-item">View Stats</div>
-            <div class="subnav-item">YouTube Studio</div>
-            <div class="subnav-item">Noxinfluencer</div>
+            <a href="#analysis-tools" class="subnav-item">View Stats</a>
+            <a href="#analysis-tools" class="subnav-item">YouTube Studio</a>
+            <a href="#analysis-tools" class="subnav-item">Noxinfluencer</a>
         </div>
 
         <div class="nav-item" data-section="section5">
@@ -267,10 +259,10 @@
             <i class="fas fa-chevron-right arrow"></i>
         </div>
         <div class="subnav" id="section5-sub">
-            <div class="subnav-item">Social Blade</div>
-            <div class="subnav-item">YouTube Monetization Checker</div>
-            <div class="subnav-item">Check Monetization</div>
-            <div class="subnav-item">YTLarge</div>
+            <a href="#revenue-tools" class="subnav-item">Social Blade</a>
+            <a href="#revenue-tools" class="subnav-item">YouTube Monetization Checker</a>
+            <a href="#revenue-tools" class="subnav-item">Check Monetization</a>
+            <a href="#revenue-tools" class="subnav-item">YTLarge</a>
         </div>
 
         <div class="nav-item" data-section="section6">
@@ -281,13 +273,13 @@
             <i class="fas fa-chevron-right arrow"></i>
         </div>
         <div class="subnav" id="section6-sub">
-            <div class="subnav-item">Canva</div>
-            <div class="subnav-item">Ostendo</div>
-            <div class="subnav-item">TuneTank</div>
-            <div class="subnav-item">NCS</div>
-            <div class="subnav-item">Pexels</div>
-            <div class="subnav-item">Pixabay</div>
-            <div class="subnav-item">Unsplash</div>
+            <a href="#creation-tools" class="subnav-item">Canva</a>
+            <a href="#creation-tools" class="subnav-item">Ostendo</a>
+            <a href="#creation-tools" class="subnav-item">TuneTank</a>
+            <a href="#creation-tools" class="subnav-item">NCS</a>
+            <a href="#creation-tools" class="subnav-item">Pexels</a>
+            <a href="#creation-tools" class="subnav-item">Pixabay</a>
+            <a href="#creation-tools" class="subnav-item">Unsplash</a>
         </div>
 
         <div class="nav-item" data-section="section7">
@@ -298,14 +290,14 @@
             <i class="fas fa-chevron-right arrow"></i>
         </div>
         <div class="subnav" id="section7-sub">
-            <div class="subnav-item">Y2mate</div>
-            <div class="subnav-item">DownSub</div>
+            <a href="#download-tools" class="subnav-item">Y2mate</a>
+            <a href="#download-tools" class="subnav-item">DownSub</a>
         </div>
     </div>
 
     <div class="container">
         <!-- 热门爆款的选题挖掘工具 -->
-        <section class="section" id="section1">
+        <section class="section" id="trending-tools">
             <h2>一、热门爆款的选题挖掘工具</h2>
             <div class="tools-grid">
                 <a href="https://piped.kavin.rocks/trending" class="tool-card" target="_blank" rel="noopener noreferrer">
@@ -366,7 +358,7 @@
         </section>
 
         <!-- 频道对标挖掘工具 -->
-        <section class="section" id="section2">
+        <section class="section" id="channel-tools">
             <h2>二、频道对标挖掘工具</h2>
             <div class="tools-grid">
                 <a href="https://www.findachannel.net/" class="tool-card" target="_blank" rel="noopener noreferrer">
@@ -405,7 +397,7 @@
         </section>
 
         <!-- 关键词挖掘与SEO工具 -->
-        <section class="section" id="section3">
+        <section class="section" id="seo-tools">
             <h2>三、关键词挖掘与SEO工具</h2>
             <div class="tools-grid">
                 <a href="https://www.tubebuddy.com/" class="tool-card" target="_blank" rel="noopener noreferrer">
@@ -455,7 +447,7 @@
         </section>
 
         <!-- 频道分析工具 -->
-        <section class="section" id="section4">
+        <section class="section" id="analysis-tools">
             <h2>四、频道分析工具</h2>
             <div class="tools-grid">
                 <a href="https://www.viewstats.com/" class="tool-card" target="_blank" rel="noopener noreferrer">
@@ -492,9 +484,8 @@
                 </a>
             </div>
         </section>
-
-        <!-- 频道收益分析工具 -->
-        <section class="section" id="section5">
+                <!-- 频道收益分析工具 -->
+        <section class="section" id="revenue-tools">
             <h2>五、频道收益分析工具</h2>
             <div class="tools-grid">
                 <a href="https://socialblade.com/" class="tool-card" target="_blank" rel="noopener noreferrer">
@@ -544,7 +535,7 @@
         </section>
 
         <!-- 内容创作工具 -->
-        <section class="section" id="section6">
+        <section class="section" id="creation-tools">
             <h2>六、内容创作工具</h2>
             <div class="tools-grid">
                 <a href="https://www.canva.cn/" class="tool-card" target="_blank" rel="noopener noreferrer">
@@ -627,7 +618,7 @@
         </section>
 
         <!-- 下载工具 -->
-        <section class="section" id="section7">
+        <section class="section" id="download-tools">
             <h2>七、下载工具</h2>
             <div class="tools-grid">
                 <a href="https://www.y2mate.com/" class="tool-card" target="_blank" rel="noopener noreferrer">
@@ -676,32 +667,24 @@
             });
         });
 
-        // 处理子菜单项的点击
-        document.querySelectorAll('.subnav-item').forEach(item => {
-            item.addEventListener('click', (e) => {
-                e.stopPropagation();
-                
-                const sectionName = item.textContent.trim();
-                const sections = document.querySelectorAll('.section');
-                
-                sections.forEach(section => {
-                    if (section.querySelector('h2').textContent.includes(sectionName)) {
-                        section.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
-            });
-        });
-
-        // 处理滚动时的导航高亮
-        window.addEventListener('scroll', () => {
+        // 监听滚动事件，高亮当前所在区域的菜单项
+        window.addEventListener('scroll', function() {
             const sections = document.querySelectorAll('.section');
-            const navItems = document.querySelectorAll('.nav-item');
+            const menuItems = document.querySelectorAll('.subnav a');
             
-            sections.forEach((section, index) => {
-                const rect = section.getBoundingClientRect();
-                if (rect.top <= 100 && rect.bottom >= 100) {
-                    navItems.forEach(item => item.classList.remove('active'));
-                    navItems[index].classList.add('active');
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 60) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            menuItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href').substring(1) === current) {
+                    item.classList.add('active');
                 }
             });
         });
