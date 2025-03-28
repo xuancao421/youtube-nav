@@ -143,12 +143,12 @@
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     transition: all 0.1s ease;  /* 点击反馈更快 */
 }
-       .tool-icon {
-    min-width: 40px;
-    width: 40px;
-    height: 40px;
+     .tool-icon {
+    min-width: 32px;    /* 从 40px 改小 */
+    width: 32px;        /* 从 40px 改小 */
+    height: 32px;       /* 从 40px 改小 */
     margin-right: 15px;
-    border-radius: 8px;
+    border-radius: 6px;  /* 从 8px 改小 */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -161,17 +161,19 @@
     flex: 1;
     min-width: 0;
 }
-        .tool-name {
-            font-size: 1.2em;
-            font-weight: bold;
-            margin-bottom: 8px;
-            color: #1a1a1a;
-        }
-        .tool-desc {
-            color: #666;
-            font-size: 0.9em;
-            line-height: 1.4;
-        }
+
+.tool-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+}
+
+.tool-desc {
+    color: #666;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
     </style>
 </head>
 <body>
