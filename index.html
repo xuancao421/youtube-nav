@@ -94,7 +94,6 @@
       background: rgba(255,255,255,0.05);
     }
     .subnav a.active {
-      /* 仅保留左侧边框高亮及文字颜色变化 */
       background: none;
       border-left: 3px solid #FFD700;
       color: #fff;
@@ -191,6 +190,80 @@
       font-size: 0.9em;
       line-height: 1.4;
     }
+
+    /* 移动端适配样式 */
+    @media screen and (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 10px 0;
+      }
+
+      .container {
+        margin-left: 0;
+        padding: 10px;
+      }
+
+      .tools-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .tool-card {
+        padding: 10px;
+      }
+
+      .tool-icon {
+        min-width: 24px;
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+      }
+
+      .tool-icon img {
+        width: 20px;
+        height: 20px;
+      }
+
+      .tool-name {
+        font-size: 1em;
+      }
+
+      .tool-desc {
+        font-size: 0.8em;
+      }
+
+      .section {
+        padding: 15px;
+        margin-bottom: 15px;
+      }
+
+      h2 {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+      }
+
+      .sidebar-logo h2 {
+        font-size: 1.3em;
+      }
+
+      .sidebar-logo h3 {
+        font-size: 1.2em;
+      }
+
+      .nav-item {
+        padding: 8px 16px;
+      }
+
+      .subnav {
+        padding-left: 24px;
+      }
+
+      .subnav a {
+        padding: 6px 16px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -249,12 +322,12 @@
       <i class="fas fa-chevron-right arrow"></i>
     </div>
     <div class="subnav" id="section4-sub">
+      <a href="#analysis-tools" class="subnav-item">VidIQ</a>
+      <a href="#analysis-tools" class="subnav-item">Noxinfluencer</a>
       <a href="#analysis-tools" class="subnav-item">View Stats</a>
       <a href="#analysis-tools" class="subnav-item">YouTube Studio</a>
-      <a href="#analysis-tools" class="subnav-item">Noxinfluencer</a>
     </div>
-
-    <div class="nav-item" data-section="section5">
+        <div class="nav-item" data-section="section5">
       <div class="nav-content">
         <i class="fas fa-dollar-sign"></i>
         <span>频道收益分析工具</span>
@@ -280,6 +353,7 @@
       <a href="#creation-tools" class="subnav-item">Ostendo</a>
       <a href="#creation-tools" class="subnav-item">TuneTank</a>
       <a href="#creation-tools" class="subnav-item">NCS</a>
+      <a href="#creation-tools" class="subnav-item">Epidemic Sound</a>
       <a href="#creation-tools" class="subnav-item">Pexels</a>
       <a href="#creation-tools" class="subnav-item">Pixabay</a>
       <a href="#creation-tools" class="subnav-item">Unsplash</a>
@@ -441,6 +515,26 @@
     <section class="section" id="analysis-tools">
       <h2>四、频道分析工具</h2>
       <div class="tools-grid">
+        <a href="https://vidiq.com/" class="tool-card" target="_blank" rel="noopener noreferrer">
+          <div class="tool-icon">
+            <img src="https://vidiq.com/favicon.ico" alt="VidIQ" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-chart-bar\'></i>';">
+          </div>
+          <div class="tool-content">
+            <div class="tool-name">VidIQ</div>
+            <div class="tool-desc">专业的YouTube频道分析工具</div>
+          </div>
+        </a>
+
+        <a href="https://cn.noxinfluencer.com/" class="tool-card" target="_blank" rel="noopener noreferrer">
+          <div class="tool-icon">
+            <img src="https://cn.noxinfluencer.com/favicon.ico" alt="Noxinfluencer" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-chart-pie\'></i>';">
+          </div>
+          <div class="tool-content">
+            <div class="tool-name">Noxinfluencer</div>
+            <div class="tool-desc">提供网红和频道的详细数据</div>
+          </div>
+        </a>
+
         <a href="https://www.viewstats.com/" class="tool-card" target="_blank" rel="noopener noreferrer">
           <div class="tool-icon">
             <img src="https://www.viewstats.com/favicon.ico" alt="View Stats" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-chart-bar\'></i>';">
@@ -458,16 +552,6 @@
           <div class="tool-content">
             <div class="tool-name">YouTube Studio</div>
             <div class="tool-desc">管理视频、查看数据分析</div>
-          </div>
-        </a>
-
-        <a href="https://cn.noxinfluencer.com/" class="tool-card" target="_blank" rel="noopener noreferrer">
-          <div class="tool-icon">
-            <img src="https://cn.noxinfluencer.com/favicon.ico" alt="Noxinfluencer" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-chart-pie\'></i>';">
-          </div>
-          <div class="tool-content">
-            <div class="tool-name">Noxinfluencer</div>
-            <div class="tool-desc">提供网红和频道的详细数据</div>
           </div>
         </a>
       </div>
@@ -560,6 +644,16 @@
           <div class="tool-content">
             <div class="tool-name">NCS</div>
             <div class="tool-desc">免费无版权音乐平台</div>
+          </div>
+        </a>
+
+        <a href="https://www.epidemicsound.com/" class="tool-card" target="_blank" rel="noopener noreferrer">
+          <div class="tool-icon">
+            <img src="https://www.epidemicsound.com/favicon.ico" alt="Epidemic Sound" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-music\'></i>';">
+          </div>
+          <div class="tool-content">
+            <div class="tool-name">Epidemic Sound</div>
+            <div class="tool-desc">专业音乐库，提供高质量无版权音乐</div>
           </div>
         </a>
 
