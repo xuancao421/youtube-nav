@@ -95,6 +95,16 @@
       color: #FFD700;
       background: rgba(255,255,255,0.05);
     }
+    /* 鼠标悬停时在二级菜单左侧显示黄色竖线 */
+    .subnav-item:hover::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: yellow;
+    }
     .container {
       margin-left: 280px;
       padding: 30px;
@@ -324,7 +334,7 @@
             </div>
           </a>
 
-          <a href="https://yewtu.be/feed/trending" class="tool-card" target="_blank">
+          <a href="https://yewtu.be/feed/trending?type=Default&region=US" class="tool-card" target="_blank">
             <div class="tool-icon">
               <img src="https://yewtu.be/favicon.ico" alt="YewTube Trending" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-fire\'></i>';">
             </div>
@@ -333,7 +343,8 @@
               <div class="tool-desc">开源YouTube趋势跟踪工具</div>
             </div>
           </a>
-                    <a href="https://www.tubefilter.com/" class="tool-card" target="_blank">
+
+          <a href="https://www.tubefilter.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
               <img src="https://www.tubefilter.com/favicon.ico" alt="Tubefilter" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-filter\'></i>';">
             </div>
@@ -451,9 +462,9 @@
             </div>
           </a>
 
-          <a href="https://searchsuggest.io/" class="tool-card" target="_blank">
+          <a href="https://www.searchsuggest.tips/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://searchsuggest.io/favicon.ico" alt="SearchSuggest" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-search-plus\'></i>';">
+              <img src="https://www.searchsuggest.tips/favicon.ico" alt="SearchSuggest" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-search-plus\'></i>';">
             </div>
             <div class="tool-content">
               <div class="tool-name">SearchSuggest</div>
@@ -463,7 +474,8 @@
         </div>
       </div>
     </section>
-        <!-- 频道分析与对标 -->
+    
+    <!-- 频道分析与对标 -->
     <section class="category-section" id="channel-data">
       <h2 class="category-title">
         <i class="fas fa-chart-line"></i>
@@ -544,9 +556,9 @@
           频道对标工具
         </h3>
         <div class="tools-grid">
-          <a href="https://findachannel.co/" class="tool-card" target="_blank">
+          <a href="https://www.findachannel.net/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://findachannel.co/favicon.ico" alt="Find A Channel" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-search\'></i>';">
+              <img src="https://www.findachannel.net/favicon.ico" alt="Find A Channel" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-search\'></i>';">
             </div>
             <div class="tool-content">
               <div class="tool-name">Find A Channel</div>
@@ -624,7 +636,8 @@
         </div>
       </div>
     </section>
-        <!-- 内容创作工具 -->
+    
+    <!-- 内容创作工具 -->
     <section class="category-section" id="video-creation">
       <h2 class="category-title">
         <i class="fas fa-paint-brush"></i>
@@ -667,9 +680,9 @@
             </div>
           </a>
 
-          <a href="https://keling.tencent.com/" class="tool-card" target="_blank">
+          <a href="https://app.klingai.com/cn/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://keling.tencent.com/favicon.ico" alt="可灵" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-user-circle\'></i>';">
+              <img src="https://app.klingai.com/favicon.ico" alt="可灵" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-user-circle\'></i>';">
             </div>
             <div class="tool-content">
               <div class="tool-name">可灵</div>
@@ -677,9 +690,9 @@
             </div>
           </a>
 
-          <a href="https://www.jimeng.cn/" class="tool-card" target="_blank">
+          <a href="https://jimeng.jianying.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://www.jimeng.cn/favicon.ico" alt="即梦" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-video\'></i>';">
+              <img src="https://jimeng.jianying.com/favicon.ico" alt="即梦" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-video\'></i>';">
             </div>
             <div class="tool-content">
               <div class="tool-name">即梦</div>
@@ -687,9 +700,9 @@
             </div>
           </a>
 
-          <a href="https://www.hailuo.ai/" class="tool-card" target="_blank">
+          <a href="https://hailuoai.video/?mid=..." class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://www.hailuo.ai/favicon.ico" alt="海螺" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-microphone\'></i>';">
+              <img src="https://hailuoai.video/favicon.ico" alt="海螺" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-microphone\'></i>';">
             </div>
             <div class="tool-content">
               <div class="tool-name">海螺</div>
@@ -745,7 +758,6 @@
           图像与视觉设计
         </h3>
         <div class="tools-grid">
-          <!-- 图像设计工具卡片 -->
           <a href="https://www.canva.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
               <img src="https://www.canva.com/favicon.ico" alt="Canva" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-palette\'></i>';">
@@ -775,7 +787,8 @@
               <div class="tool-desc">3D模型素材库</div>
             </div>
           </a>
-                    <a href="https://www.pexels.com/" class="tool-card" target="_blank">
+
+          <a href="https://www.pexels.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
               <img src="https://www.pexels.com/favicon.ico" alt="Pexels" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-camera\'></i>';">
             </div>
@@ -833,9 +846,9 @@
           音频与音效
         </h3>
         <div class="tools-grid">
-          <a href="https://www.tunetank.com/" class="tool-card" target="_blank">
+          <a href="https://tunetank.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://www.tunetank.com/favicon.ico" alt="TuneTank" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-music\'></i>';">
+              <img src="https://tunetank.com/favicon.ico" alt="TuneTank" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-music\'></i>';">
             </div>
             <div class="tool-content">
               <div class="tool-name">TuneTank</div>
@@ -872,6 +885,43 @@
               <div class="tool-desc">AI背景音乐生成器</div>
             </div>
           </a>
+          <!-- 新增音频/音效资源工具卡 -->
+          <a href="https://www.youtube.com/channel/UCht8qITGkBvXKsR1Byln-wA" class="tool-card" target="_blank">
+            <div class="tool-icon">
+              <img src="https://www.youtube.com/favicon.ico" alt="YouTube音效频道" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fab fa-youtube\'></i>';">
+            </div>
+            <div class="tool-content">
+              <div class="tool-name">YouTube音效频道</div>
+              <div class="tool-desc">专注音效素材的YouTube频道</div>
+            </div>
+          </a>
+          <a href="https://soundcloud.com/" class="tool-card" target="_blank">
+            <div class="tool-icon">
+              <img src="https://soundcloud.com/favicon.ico" alt="SoundCloud" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fab fa-soundcloud\'></i>';">
+            </div>
+            <div class="tool-content">
+              <div class="tool-name">SoundCloud</div>
+              <div class="tool-desc">海量音频分享平台</div>
+            </div>
+          </a>
+          <a href="https://sclouddownloader.net/" class="tool-card" target="_blank">
+            <div class="tool-icon">
+              <img src="https://sclouddownloader.net/favicon.ico" alt="SoundCloud下载工具" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-download\'></i>';">
+            </div>
+            <div class="tool-content">
+              <div class="tool-name">SoundCloud下载工具</div>
+              <div class="tool-desc">便捷的音频下载助手</div>
+            </div>
+          </a>
+          <a href="https://www.aigei.com/" class="tool-card" target="_blank">
+            <div class="tool-icon">
+              <img src="https://www.aigei.com/favicon.ico" alt="爱给网" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-music\'></i>';">
+            </div>
+            <div class="tool-content">
+              <div class="tool-name">爱给网</div>
+              <div class="tool-desc">音效与素材资源平台</div>
+            </div>
+          </a>
         </div>
       </div>
 
@@ -903,7 +953,8 @@
         </div>
       </div>
     </section>
-        <!-- 视频下载与格式转换 -->
+    
+    <!-- 视频下载与格式转换 -->
     <section class="category-section" id="download-tools">
       <h2 class="category-title">
         <i class="fas fa-download"></i>
@@ -920,9 +971,9 @@
           </div>
         </a>
 
-        <a href="https://green-video.net/" class="tool-card" target="_blank">
+        <a href="https://greenvideo.cc/" class="tool-card" target="_blank">
           <div class="tool-icon">
-            <img src="https://green-video.net/favicon.ico" alt="GreenVideo" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-leaf\'></i>';">
+            <img src="https://greenvideo.cc/favicon.ico" alt="GreenVideo" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-leaf\'></i>';">
           </div>
           <div class="tool-content">
             <div class="tool-name">GreenVideo</div>
@@ -965,9 +1016,9 @@
             </div>
           </a>
 
-          <a href="https://vidiq.com/monetization-checker/" class="tool-card" target="_blank">
+          <a href="https://ytlarge.com/youtube/monetization-checker/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://vidiq.com/favicon.ico" alt="YouTube Monetization Checker" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-check-circle\'></i>';">
+              <img src="https://ytlarge.com/favicon.ico" alt="YouTube Monetization Checker" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-check-circle\'></i>';">
             </div>
             <div class="tool-content">
               <div class="tool-name">YouTube Monetization Checker</div>
@@ -975,9 +1026,9 @@
             </div>
           </a>
 
-          <a href="https://checkmonetization.org/" class="tool-card" target="_blank">
+          <a href="https://chromewebstore.google.com/detail/check-monetization/hcpbkgmihdmgecabghhddmppipjnkdje" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://checkmonetization.org/favicon.ico" alt="Check Monetization" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-check\'></i>';">
+              <img src="https://chromewebstore.google.com/favicon.ico" alt="Check Monetization" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-check\'></i>';">
             </div>
             <div class="tool-content">
               <div class="tool-name">Check Monetization</div>
