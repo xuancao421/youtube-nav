@@ -158,39 +158,52 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       border-color: #2196F3;
     }
+    /* 修改右侧图标展示逻辑：图标容器固定24×24，居中显示 */
     .tool-icon {
-      width: 40px;
-      height: 40px;
-      margin-right: 12px;
-      border-radius: 8px;
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+      border-radius: 4px;
       overflow: hidden;
       flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .tool-icon img {
-      width: 100%;
-      height: 100%;
+      width: 24px;
+      height: 24px;
       object-fit: cover;
+      display: block;
+    }
+    .tool-icon .fallback-icon {
+      display: none;
+      width: 24px;
+      height: 24px;
+      text-align: center;
+      line-height: 24px;
     }
     .tool-content {
       flex: 1;
       min-width: 0;
     }
+    /* 网站名称字体用黑色，稍大；描述文字用深灰，稍小 */
     .tool-name {
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 500;
       margin-bottom: 4px;
-      color: #333;
+      color: #000;
     }
     .tool-desc {
-      font-size: 13px;
-      color: #666;
+      font-size: 14px;
+      color: #555;
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
     }
-
+    
     @media screen and (max-width: 1200px) {
       .tools-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -326,7 +339,8 @@
         <div class="tools-grid">
           <a href="https://piped.kavin.rocks/trending" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://piped.kavin.rocks/favicon.ico" alt="Piped" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-video\'></i>';">
+              <img src="https://piped.kavin.rocks/favicon.ico" alt="Piped" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-video"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Piped</div>
@@ -336,7 +350,8 @@
 
           <a href="https://yewtu.be/feed/trending?type=Default&region=US" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://yewtu.be/favicon.ico" alt="YewTube Trending" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-fire\'></i>';">
+              <img src="https://yewtu.be/favicon.ico" alt="YewTube Trending" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-fire"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">YewTube Trending</div>
@@ -346,7 +361,8 @@
 
           <a href="https://www.tubefilter.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://www.tubefilter.com/favicon.ico" alt="Tubefilter" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-filter\'></i>';">
+              <img src="https://www.tubefilter.com/favicon.ico" alt="Tubefilter" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-filter"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Tubefilter</div>
@@ -356,7 +372,8 @@
 
           <a href="https://explodingtopics.com/blog/top-youtube-searches" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://explodingtopics.com/favicon.ico" alt="Exploding Topics" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-chart-line\'></i>';">
+              <img src="https://explodingtopics.com/favicon.ico" alt="Exploding Topics" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-chart-line"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Exploding Topics</div>
@@ -366,7 +383,8 @@
 
           <a href="https://www.tastyedits.com/most-profitable-youtube-niches/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://www.tastyedits.com/favicon.ico" alt="TASTYEUTTS" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-utensils\'></i>';">
+              <img src="https://www.tastyedits.com/favicon.ico" alt="TASTYEUTTS" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-utensils"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">TASTYEUTTS</div>
@@ -376,7 +394,8 @@
 
           <a href="https://www.quora.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://www.quora.com/favicon.ico" alt="Quora" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-question-circle\'></i>';">
+              <img src="https://www.quora.com/favicon.ico" alt="Quora" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-question-circle"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Quora</div>
@@ -386,7 +405,8 @@
 
           <a href="https://www.reddit.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://www.reddit.com/favicon.ico" alt="Reddit" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fab fa-reddit\'></i>';">
+              <img src="https://www.reddit.com/favicon.ico" alt="Reddit" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fab fa-reddit"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Reddit</div>
@@ -404,7 +424,8 @@
         <div class="tools-grid">
           <a href="https://keywordtool.io/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://keywordtool.io/favicon.ico" alt="Keyword Tool" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-key\'></i>';">
+              <img src="https://keywordtool.io/favicon.ico" alt="Keyword Tool" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-key"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Keyword Tool</div>
@@ -414,7 +435,8 @@
 
           <a href="https://answerthepublic.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://answerthepublic.com/favicon.ico" alt="Answer The Public" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-comments\'></i>';">
+              <img src="https://answerthepublic.com/favicon.ico" alt="Answer The Public" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-comments"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Answer The Public</div>
@@ -424,7 +446,8 @@
 
           <a href="https://ahrefs.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://ahrefs.com/favicon.ico" alt="Ahrefs" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-chart-bar\'></i>';">
+              <img src="https://ahrefs.com/favicon.ico" alt="Ahrefs" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-chart-bar"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Ahrefs</div>
@@ -434,7 +457,8 @@
 
           <a href="https://www.semrush.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://www.semrush.com/favicon.ico" alt="Semrush" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-search-dollar\'></i>';">
+              <img src="https://www.semrush.com/favicon.ico" alt="Semrush" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-search-dollar"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Semrush</div>
@@ -444,7 +468,8 @@
 
           <a href="https://www.tuocibao.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://www.tuocibao.com/favicon.ico" alt="脱词宝" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-language\'></i>';">
+              <img src="https://www.tuocibao.com/favicon.ico" alt="脱词宝" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-language"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">脱词宝</div>
@@ -454,7 +479,8 @@
 
           <a href="https://alsoasked.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://alsoasked.com/favicon.ico" alt="AlsoAsked" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-question\'></i>';">
+              <img src="https://alsoasked.com/favicon.ico" alt="AlsoAsked" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-question"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">AlsoAsked</div>
@@ -464,7 +490,8 @@
 
           <a href="https://www.searchsuggest.tips/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://www.searchsuggest.tips/favicon.ico" alt="SearchSuggest" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-search-plus\'></i>';">
+              <img src="https://www.searchsuggest.tips/favicon.ico" alt="SearchSuggest" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-search-plus"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">SearchSuggest</div>
@@ -490,7 +517,8 @@
         <div class="tools-grid">
           <a href="https://vidiq.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://vidiq.com/favicon.ico" alt="VidIQ" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-chart-line\'></i>';">
+              <img src="https://vidiq.com/favicon.ico" alt="VidIQ" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-chart-line"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">VidIQ</div>
@@ -500,7 +528,8 @@
 
           <a href="https://www.noxinfluencer.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://www.noxinfluencer.com/favicon.ico" alt="Noxinfluencer" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-users\'></i>';">
+              <img src="https://www.noxinfluencer.com/favicon.ico" alt="Noxinfluencer" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-users"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Noxinfluencer</div>
@@ -510,7 +539,8 @@
 
           <a href="https://viewstats.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://viewstats.com/favicon.ico" alt="View Stats" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-eye\'></i>';">
+              <img src="https://viewstats.com/favicon.ico" alt="View Stats" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-eye"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">View Stats</div>
@@ -520,7 +550,8 @@
 
           <a href="https://studio.youtube.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://www.youtube.com/favicon.ico" alt="YouTube Studio" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fab fa-youtube\'></i>';">
+              <img src="https://www.youtube.com/favicon.ico" alt="YouTube Studio" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fab fa-youtube"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">YouTube Studio</div>
@@ -530,7 +561,8 @@
 
           <a href="https://clarity.microsoft.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://clarity.microsoft.com/favicon.ico" alt="Microsoft Clarity" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-eye\'></i>';">
+              <img src="https://clarity.microsoft.com/favicon.ico" alt="Microsoft Clarity" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-eye"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Microsoft Clarity</div>
@@ -540,8 +572,8 @@
 
           <a href="https://plausible.io/" class="tool-card" target="_blank">
             <div class="tool-icon">
-            <img src="https://plausible.io/favicon.png" alt="Plausible" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-chart-area\'></i>';">
-
+              <img src="https://plausible.io/favicon.png" alt="Plausible" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-chart-area"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Plausible</div>
@@ -559,7 +591,8 @@
         <div class="tools-grid">
           <a href="https://www.findachannel.net/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://www.findachannel.net/favicon.ico" alt="Find A Channel" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-search\'></i>';">
+              <img src="https://www.findachannel.net/favicon.ico" alt="Find A Channel" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-search"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Find A Channel</div>
@@ -569,7 +602,8 @@
 
           <a href="https://similarchannels.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://similarchannels.com/favicon.ico" alt="Similar Channels" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-users\'></i>';">
+              <img src="https://similarchannels.com/favicon.ico" alt="Similar Channels" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-users"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Similar Channels</div>
@@ -579,7 +613,8 @@
 
           <a href="https://favoree.io/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://favoree.io/favicon.ico" alt="Favoree" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-star\'></i>';">
+              <img src="https://favoree.io/favicon.ico" alt="Favoree" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-star"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Favoree</div>
@@ -597,7 +632,8 @@
         <div class="tools-grid">
           <a href="https://analytics.google.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://analytics.google.com/favicon.ico" alt="Google Analytics" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-chart-pie\'></i>';">
+              <img src="https://analytics.google.com/favicon.ico" alt="Google Analytics" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-chart-pie"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Google Analytics</div>
@@ -607,7 +643,8 @@
 
           <a href="https://search.google.com/search-console/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://ssl.gstatic.com/search-console/favicon.ico" alt="Google Search Console" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-search\'></i>';">
+              <img src="https://ssl.gstatic.com/search-console/favicon.ico" alt="Google Search Console" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-search"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Google Search Console</div>
@@ -617,7 +654,8 @@
 
           <a href="https://trends.google.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://trends.google.com/favicon.ico" alt="Google Trends" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-chart-line\'></i>';">
+              <img src="https://trends.google.com/favicon.ico" alt="Google Trends" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-chart-line"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Google Trends</div>
@@ -627,7 +665,8 @@
 
           <a href="https://www.google.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://www.google.com/favicon.ico" alt="Google Search" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-search\'></i>';">
+              <img src="https://www.google.com/favicon.ico" alt="Google Search" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-search"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Google Search</div>
@@ -653,7 +692,8 @@
         <div class="tools-grid">
           <a href="https://openai.com/sora" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://openai.com/favicon.ico" alt="Sora" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-robot\'></i>';">
+              <img src="https://openai.com/favicon.ico" alt="Sora" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-robot"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Sora</div>
@@ -663,7 +703,8 @@
 
           <a href="https://runway.ml/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://runway.ml/favicon.ico" alt="Runway" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-magic\'></i>';">
+              <img src="https://runway.ml/favicon.ico" alt="Runway" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-magic"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Runway</div>
@@ -673,7 +714,8 @@
 
           <a href="https://pika.art/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://pika.art/favicon.ico" alt="Pika" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-film\'></i>';">
+              <img src="https://pika.art/favicon.ico" alt="Pika" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-film"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Pika</div>
@@ -683,7 +725,8 @@
 
           <a href="https://app.klingai.com/cn/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://app.klingai.com/favicon.ico" alt="可灵" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-user-circle\'></i>';">
+              <img src="https://app.klingai.com/favicon.ico" alt="可灵" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-user-circle"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">可灵</div>
@@ -693,7 +736,8 @@
 
           <a href="https://jimeng.jianying.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://jimeng.jianying.com/favicon.ico" alt="即梦" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-video\'></i>';">
+              <img src="https://jimeng.jianying.com/favicon.ico" alt="即梦" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-video"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">即梦</div>
@@ -703,7 +747,8 @@
 
           <a href="https://hailuoai.video/?mid=..." class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://hailuoai.video/favicon.ico" alt="海螺" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-microphone\'></i>';">
+              <img src="https://hailuoai.video/favicon.ico" alt="海螺" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-microphone"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">海螺</div>
@@ -713,7 +758,8 @@
 
           <a href="https://www.vidu.io/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://www.vidu.io/favicon.ico" alt="Vidu" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-video\'></i>';">
+              <img src="https://www.vidu.io/favicon.ico" alt="Vidu" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-video"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Vidu</div>
@@ -723,7 +769,8 @@
 
           <a href="https://pictory.ai/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://pictory.ai/favicon.ico" alt="Pictory.ai" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-film\'></i>';">
+              <img src="https://pictory.ai/favicon.ico" alt="Pictory.ai" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-film"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Pictory.ai</div>
@@ -733,7 +780,8 @@
 
           <a href="https://lumalabs.ai/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://lumalabs.ai/favicon.ico" alt="Luma AI" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-cube\'></i>';">
+              <img src="https://lumalabs.ai/favicon.ico" alt="Luma AI" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-cube"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Luma AI</div>
@@ -743,99 +791,12 @@
 
           <a href="https://www.capcut.cn/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://www.capcut.cn/favicon.ico" alt="剪映" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-cut\'></i>';">
+              <img src="https://www.capcut.cn/favicon.ico" alt="剪映" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-cut"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">剪映</div>
               <div class="tool-desc">字节跳动智能剪辑工具</div>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="subcategory" id="image-design">
-        <h3 class="subcategory-title">
-          <i class="fas fa-image"></i>
-          图像与视觉设计
-        </h3>
-        <div class="tools-grid">
-          <a href="https://www.canva.com/" class="tool-card" target="_blank">
-            <div class="tool-icon">
-              <img src="https://www.canva.com/favicon.ico" alt="Canva" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-palette\'></i>';">
-            </div>
-            <div class="tool-content">
-              <div class="tool-name">Canva</div>
-              <div class="tool-desc">在线平面设计平台</div>
-            </div>
-          </a>
-
-          <a href="https://www.liblib.ai/" class="tool-card" target="_blank">
-            <div class="tool-icon">
-              <img src="https://www.liblib.ai/favicon.ico" alt="Liblib.art" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-paint-brush\'></i>';">
-            </div>
-            <div class="tool-content">
-              <div class="tool-name">Liblib.art</div>
-              <div class="tool-desc">AI艺术生成社区</div>
-            </div>
-          </a>
-
-          <a href="http://ai.syhall.cn/" class="tool-card" target="_blank">
-            <div class="tool-icon">
-              <img src="http://ai.syhall.cn/favicon.ico" alt="Syhall" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-cube\'></i>';">
-            </div>
-            <div class="tool-content">
-              <div class="tool-name">Syhall</div>
-              <div class="tool-desc">3D模型素材库</div>
-            </div>
-          </a>
-
-          <a href="https://www.pexels.com/" class="tool-card" target="_blank">
-            <div class="tool-icon">
-              <img src="https://www.pexels.com/favicon.ico" alt="Pexels" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-camera\'></i>';">
-            </div>
-            <div class="tool-content">
-              <div class="tool-name">Pexels</div>
-              <div class="tool-desc">免费商用图库</div>
-            </div>
-          </a>
-
-          <a href="https://pixabay.com/" class="tool-card" target="_blank">
-            <div class="tool-icon">
-              <img src="https://pixabay.com/favicon.ico" alt="Pixabay" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-images\'></i>';">
-            </div>
-            <div class="tool-content">
-              <div class="tool-name">Pixabay</div>
-              <div class="tool-desc">高质量素材共享平台</div>
-            </div>
-          </a>
-
-          <a href="https://unsplash.com/" class="tool-card" target="_blank">
-            <div class="tool-icon">
-              <img src="https://unsplash.com/favicon.ico" alt="Unsplash" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-camera-retro\'></i>';">
-            </div>
-            <div class="tool-content">
-              <div class="tool-name">Unsplash</div>
-              <div class="tool-desc">专业摄影作品库</div>
-            </div>
-          </a>
-
-          <a href="https://recraft.ai/" class="tool-card" target="_blank">
-            <div class="tool-icon">
-              <img src="https://recraft.ai/favicon.ico" alt="Recraft.ai" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-vector-square\'></i>';">
-            </div>
-            <div class="tool-content">
-              <div class="tool-name">Recraft.ai</div>
-              <div class="tool-desc">AI矢量图形生成工具</div>
-            </div>
-          </a>
-
-          <a href="https://ai.quanyouhulian.com/#/draw/1002" class="tool-card" target="_blank">
-            <div class="tool-icon">
-              <img src="https://ai.quanyouhulian.com/favicon.ico" alt="全有AI绘图" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-paint-brush\'></i>';">
-            </div>
-            <div class="tool-content">
-              <div class="tool-name">全有AI绘图</div>
-              <div class="tool-desc">中文AI绘画平台</div>
             </div>
           </a>
         </div>
@@ -849,7 +810,8 @@
         <div class="tools-grid">
           <a href="https://tunetank.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://tunetank.com/favicon.ico" alt="TuneTank" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-music\'></i>';">
+              <img src="https://tunetank.com/favicon.ico" alt="TuneTank" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-music"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">TuneTank</div>
@@ -859,7 +821,8 @@
 
           <a href="https://ncs.io/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://ncs.io/favicon.ico" alt="NCS" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-music\'></i>';">
+              <img src="https://ncs.io/favicon.ico" alt="NCS" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-music"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">NCS</div>
@@ -869,7 +832,8 @@
 
           <a href="https://www.epidemicsound.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://www.epidemicsound.com/favicon.ico" alt="Epidemic Sound" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-music\'></i>';">
+              <img src="https://www.epidemicsound.com/favicon.ico" alt="Epidemic Sound" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-music"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Epidemic Sound</div>
@@ -877,19 +841,21 @@
             </div>
           </a>
 
-          <a href="https://www.tosound.com//" class="tool-card" target="_blank">
+          <a href="https://www.tosound.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-             <img src="https://tosound.com/favicon.ico" alt="ToSound" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-robot\'></i>';">
-
+              <img src="https://tosound.com/favicon.ico" alt="ToSound" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-robot"></i>
+            </div>
             <div class="tool-content">
               <div class="tool-name">ToSound</div>
               <div class="tool-desc">AI背景音乐生成器</div>
             </div>
           </a>
-          <!-- 新增音频/音效资源工具卡 -->
+          <!-- 新增站点 -->
           <a href="https://www.youtube.com/channel/UCht8qITGkBvXKsR1Byln-wA" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://www.youtube.com/favicon.ico" alt="YouTube音效频道" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fab fa-youtube\'></i>';">
+              <img src="https://www.youtube.com/favicon.ico" alt="YouTube音效频道" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fab fa-youtube"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">YouTube音效频道</div>
@@ -898,7 +864,8 @@
           </a>
           <a href="https://soundcloud.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://soundcloud.com/favicon.ico" alt="SoundCloud" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fab fa-soundcloud\'></i>';">
+              <img src="https://soundcloud.com/favicon.ico" alt="SoundCloud" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fab fa-soundcloud"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">SoundCloud</div>
@@ -907,7 +874,8 @@
           </a>
           <a href="https://sclouddownloader.net/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://sclouddownloader.net/favicon.ico" alt="SoundCloud下载工具" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-download\'></i>';">
+              <img src="https://sclouddownloader.net/favicon.ico" alt="SoundCloud下载工具" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-download"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">SoundCloud下载工具</div>
@@ -916,7 +884,8 @@
           </a>
           <a href="https://www.aigei.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://www.aigei.com/favicon.ico" alt="爱给网" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-music\'></i>';">
+              <img src="https://www.aigei.com/favicon.ico" alt="爱给网" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-music"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">爱给网</div>
@@ -934,7 +903,8 @@
         <div class="tools-grid">
           <a href="https://ostendo.app/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://ostendo.app/favicon.ico" alt="Ostendo" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-crop\'></i>';">
+              <img src="https://ostendo.app/favicon.ico" alt="Ostendo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-crop"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Ostendo</div>
@@ -944,7 +914,8 @@
 
           <a href="https://downsub.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://downsub.com/favicon.ico" alt="DownSub" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-closed-captioning\'></i>';">
+              <img src="https://downsub.com/favicon.ico" alt="DownSub" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-closed-captioning"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">DownSub</div>
@@ -964,7 +935,8 @@
       <div class="tools-grid">
         <a href="https://www.y2mate.com/" class="tool-card" target="_blank">
           <div class="tool-icon">
-            <img src="https://www.y2mate.com/favicon.ico" alt="Y2mate" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-download\'></i>';">
+            <img src="https://www.y2mate.com/favicon.ico" alt="Y2mate" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <i class="fallback-icon fas fa-download"></i>
           </div>
           <div class="tool-content">
             <div class="tool-name">Y2mate</div>
@@ -974,7 +946,8 @@
 
         <a href="https://greenvideo.cc/" class="tool-card" target="_blank">
           <div class="tool-icon">
-            <img src="https://greenvideo.cc/favicon.ico" alt="GreenVideo" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-leaf\'></i>';">
+            <img src="https://greenvideo.cc/favicon.ico" alt="GreenVideo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <i class="fallback-icon fas fa-leaf"></i>
           </div>
           <div class="tool-content">
             <div class="tool-name">GreenVideo</div>
@@ -984,7 +957,8 @@
 
         <a href="https://www.vidjuice.com/" class="tool-card" target="_blank">
           <div class="tool-icon">
-            <img src="https://www.vidjuice.com/favicon.ico" alt="VidJuice UniTube" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-exchange-alt\'></i>';">
+            <img src="https://www.vidjuice.com/favicon.ico" alt="VidJuice UniTube" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <i class="fallback-icon fas fa-exchange-alt"></i>
           </div>
           <div class="tool-content">
             <div class="tool-name">VidJuice UniTube</div>
@@ -1009,7 +983,8 @@
         <div class="tools-grid">
           <a href="https://socialblade.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://socialblade.com/favicon.ico" alt="Social Blade" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-chart-line\'></i>';">
+              <img src="https://socialblade.com/favicon.ico" alt="Social Blade" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-chart-line"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Social Blade</div>
@@ -1019,7 +994,8 @@
 
           <a href="https://ytlarge.com/youtube/monetization-checker/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://ytlarge.com/favicon.ico" alt="YouTube Monetization Checker" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-check-circle\'></i>';">
+              <img src="https://ytlarge.com/favicon.ico" alt="YouTube Monetization Checker" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-check-circle"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">YouTube Monetization Checker</div>
@@ -1029,7 +1005,8 @@
 
           <a href="https://chromewebstore.google.com/detail/check-monetization/hcpbkgmihdmgecabghhddmppipjnkdje" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://chromewebstore.google.com/favicon.ico" alt="Check Monetization" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-check\'></i>';">
+              <img src="https://chromewebstore.google.com/favicon.ico" alt="Check Monetization" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-check"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Check Monetization</div>
@@ -1039,7 +1016,8 @@
 
           <a href="https://ytlarge.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://ytlarge.com/favicon.ico" alt="YTLarge" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-chart-area\'></i>';">
+              <img src="https://ytlarge.com/favicon.ico" alt="YTLarge" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-chart-area"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">YTLarge</div>
@@ -1057,7 +1035,8 @@
         <div class="tools-grid">
           <a href="https://www.google.com/adsense/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://www.google.com/adsense/favicon.ico" alt="AdSense" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fab fa-google\'></i>';">
+              <img src="https://www.google.com/adsense/favicon.ico" alt="AdSense" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fab fa-google"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">AdSense</div>
@@ -1067,7 +1046,8 @@
 
           <a href="https://adsterra.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://adsterra.com/favicon.ico" alt="Adsterra" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-ad\'></i>';">
+              <img src="https://adsterra.com/favicon.ico" alt="Adsterra" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-ad"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Adsterra</div>
@@ -1077,7 +1057,8 @@
 
           <a href="https://monetag.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://monetag.com/favicon.ico" alt="Monetag" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-money-bill-wave\'></i>';">
+              <img src="https://monetag.com/favicon.ico" alt="Monetag" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-money-bill-wave"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Monetag</div>
@@ -1087,7 +1068,8 @@
 
           <a href="https://ko-fi.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://ko-fi.com/favicon.ico" alt="Ko-fi" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-coffee\'></i>';">
+              <img src="https://ko-fi.com/favicon.ico" alt="Ko-fi" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-coffee"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Ko-fi</div>
@@ -1097,7 +1079,8 @@
 
           <a href="https://www.buymeacoffee.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://www.buymeacoffee.com/favicon.ico" alt="BuyMeACoffee" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-mug-hot\'></i>';">
+              <img src="https://www.buymeacoffee.com/favicon.ico" alt="BuyMeACoffee" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-mug-hot"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">BuyMeACoffee</div>
@@ -1107,7 +1090,8 @@
 
           <a href="https://gumroad.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://gumroad.com/favicon.ico" alt="Gumroad" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-shopping-cart\'></i>';">
+              <img src="https://gumroad.com/favicon.ico" alt="Gumroad" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-shopping-cart"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Gumroad</div>
@@ -1125,7 +1109,8 @@
         <div class="tools-grid">
           <a href="https://www.paddle.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://www.paddle.com/favicon.ico" alt="Paddle" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-credit-card\'></i>';">
+              <img src="https://www.paddle.com/favicon.ico" alt="Paddle" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-credit-card"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Paddle</div>
@@ -1135,7 +1120,8 @@
 
           <a href="https://stripe.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://stripe.com/favicon.ico" alt="Stripe" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-stripe\'></i>';">
+              <img src="https://stripe.com/favicon.ico" alt="Stripe" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-stripe"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Stripe</div>
@@ -1145,7 +1131,8 @@
 
           <a href="https://www.lemonsqueezy.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://www.lemonsqueezy.com/favicon.ico" alt="Lemon Squeezy" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-lemon\'></i>';">
+              <img src="https://www.lemonsqueezy.com/favicon.ico" alt="Lemon Squeezy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-lemon"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Lemon Squeezy</div>
@@ -1155,7 +1142,8 @@
 
           <a href="https://creem.com/" class="tool-card" target="_blank">
             <div class="tool-icon">
-              <img src="https://creem.com/favicon.ico" alt="Creem" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-money-check-alt\'></i>';">
+              <img src="https://creem.com/favicon.ico" alt="Creem" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <i class="fallback-icon fas fa-money-check-alt"></i>
             </div>
             <div class="tool-content">
               <div class="tool-name">Creem</div>
@@ -1175,7 +1163,8 @@
       <div class="tools-grid">
         <a href="https://www.tubebuddy.com/" class="tool-card" target="_blank">
           <div class="tool-icon">
-            <img src="https://www.tubebuddy.com/favicon.ico" alt="TubeBuddy" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-share-square\'></i>';">
+            <img src="https://www.tubebuddy.com/favicon.ico" alt="TubeBuddy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <i class="fallback-icon fas fa-share-square"></i>
           </div>
           <div class="tool-content">
             <div class="tool-name">TubeBuddy</div>
@@ -1185,7 +1174,8 @@
 
         <a href="https://hootsuite.com/" class="tool-card" target="_blank">
           <div class="tool-icon">
-            <img src="https://hootsuite.com/favicon.ico" alt="Hootsuite" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-share-alt\'></i>';">
+            <img src="https://hootsuite.com/favicon.ico" alt="Hootsuite" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <i class="fallback-icon fas fa-share-alt"></i>
           </div>
           <div class="tool-content">
             <div class="tool-name">Hootsuite</div>
@@ -1195,7 +1185,8 @@
 
         <a href="https://repurpose.io/" class="tool-card" target="_blank">
           <div class="tool-icon">
-            <img src="https://repurpose.io/favicon.ico" alt="Repurpose.io" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-sync\'></i>';">
+            <img src="https://repurpose.io/favicon.ico" alt="Repurpose.io" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <i class="fallback-icon fas fa-sync"></i>
           </div>
           <div class="tool-content">
             <div class="tool-name">Repurpose.io</div>
@@ -1205,7 +1196,8 @@
 
         <a href="https://buffer.com/" class="tool-card" target="_blank">
           <div class="tool-icon">
-            <img src="https://buffer.com/favicon.ico" alt="Buffer" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-clock\'></i>';">
+            <img src="https://buffer.com/favicon.ico" alt="Buffer" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <i class="fallback-icon fas fa-clock"></i>
           </div>
           <div class="tool-content">
             <div class="tool-name">Buffer</div>
@@ -1215,7 +1207,8 @@
 
         <a href="https://publer.io/" class="tool-card" target="_blank">
           <div class="tool-icon">
-            <img src="https://publer.io/favicon.ico" alt="Publer" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-users-cog\'></i>';">
+            <img src="https://publer.io/favicon.ico" alt="Publer" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <i class="fallback-icon fas fa-users-cog"></i>
           </div>
           <div class="tool-content">
             <div class="tool-name">Publer</div>
@@ -1225,7 +1218,8 @@
 
         <a href="https://mave.io/" class="tool-card" target="_blank">
           <div class="tool-icon">
-            <img src="https://mave.io/favicon.ico" alt="Mave" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-robot\'></i>';">
+            <img src="https://mave.io/favicon.ico" alt="Mave" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <i class="fallback-icon fas fa-robot"></i>
           </div>
           <div class="tool-content">
             <div class="tool-name">Mave</div>
@@ -1235,7 +1229,8 @@
 
         <a href="https://socialbee.io/" class="tool-card" target="_blank">
           <div class="tool-icon">
-            <img src="https://socialbee.io/favicon.ico" alt="SocialBee" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-recycle\'></i>';">
+            <img src="https://socialbee.io/favicon.ico" alt="SocialBee" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <i class="fallback-icon fas fa-recycle"></i>
           </div>
           <div class="tool-content">
             <div class="tool-name">SocialBee</div>
@@ -1245,7 +1240,8 @@
 
         <a href="https://metricool.com/" class="tool-card" target="_blank">
           <div class="tool-icon">
-            <img src="https://metricool.com/favicon.ico" alt="Metricool" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fas fa-chart-bar\'></i>';">
+            <img src="https://metricool.com/favicon.ico" alt="Metricool" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <i class="fallback-icon fas fa-chart-bar"></i>
           </div>
           <div class="tool-content">
             <div class="tool-name">Metricool</div>
