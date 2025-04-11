@@ -926,9 +926,12 @@
 
       <a href="https://www.laihua.com/" class="tool-card" target="_blank">
   <div class="tool-icon">
-    <!-- 故意填一个错误 favicon 地址，确保触发 onerror -->
-    <img src="https://www.laihua.com/not-exist-favicon.ico" alt="来画" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-    <i class="fallback-icon fas fa-video"></i>
+    <!-- 故意使用无效图标地址触发 fallback，或使用 lai hua 原本加载失败的 favicon -->
+    <img src="https://www.laihua.com/favicon.ico"
+         alt="来画"
+         style="width: 24px; height: 24px; display: block;"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+    <i class="fallback-icon fas fa-video" style="display: none; font-size: 24px;"></i>
   </div>
   <div class="tool-content">
     <div class="tool-name">来画</div>
